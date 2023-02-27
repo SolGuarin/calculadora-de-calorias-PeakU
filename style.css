@@ -1,0 +1,14 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+input, select{
+    height: 2rem;
+}
+#button{
+    width: 10rem;
+    background-color: aqua;
+}
