@@ -7,40 +7,44 @@
     <link rel="stylesheet" href="./style.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous" />
     <script src="./script.js" defer></script>
-    <title>Claculadora de calorias</title>
+    <title>Calculadora de calorias</title>
 </head>
 <body>
-    <header style="height: 15vh; background-color: aqua; display: flex; justify-content: center;">
-        <nav class="navbar navbar-expand-lg navbar-dark">
-            <div class="container-fluid">
-              <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
-                <ul class="navbar-nav">
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#">Inicio</a>
-                    </li>
-                    <li class="nav-item">
-                      <a class="nav-link" href="#">Nutrición</a>
-                    </li>
-                    <li class="nav-item">
-                      <a class="nav-link" href="#">Planes</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Contacto</a>
-                    </li>
-                </ul>
-              </div>
-            </div>
-        </nav>
+    <header style="height: 15vh;">
+        <div class="row" style="height: 15vh; width: 100vw; background-color: #c7f7f7;">
+          <div class="col-8" style=" display: flex; justify-content: center; align-items: center;">
+            <ul class="nav justify-content-center align-items-center">
+              <li class="nav-item">
+                <a class="nav-link text-muted" href="#" style="color: white;">Inicio</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#" style="color: white;">Nutrición</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#" style="color: white;">Planes</a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link" href="#" style="color: white;">Contacto</a>
+                </li>
+          </div>
+
+          <div class="col-4" style="display: flex; justify-content: center; align-items: center; flex-direction: column; padding-right: 12rem;">
+            <img src="./family-nutritionist-diet-nutrition-doctor-png-image_6303831.png" alt="" style="padding-top: 0; width: 5rem; height: 5rem; border-radius: 3rem;">
+            <p style="font-weight: bold;">SolNutritionCoach</p>
+          </div>
+          
+
+        </div>
     </header>
 
-    <div class="row" style="height: 95vh; background-color: lightskyblue;">
-        <div class="col-7" style="background-color: lightyellow; display: flex; justify-content: center;">
-            <form style=" width: 40rem; border: 0.1rem solid black; background-color: thistle;" id="formulario-calculadora">
+    <div class="row" id="container" style="height: 95vh">
+        <div class="col-7" style=" display: flex; justify-content: center;">
+            <form style=" width: 40rem;" id="formulario-calculadora">
                 <fieldset>
                   <p class="text-center" style="margin-top: 0.5rem; font-size: 2rem; font-weight: bold">Calculadora de Calorías</p>
                   <div class="mb-1">
                     <label for="nombre" class="form-label h6">Nombre</label>
-                    <input type="text" id="nombre" class="form-control" placeholder="Digíte su nombre">
+                    <input type="text" id="nombre" class="form-control" placeholder="Digíte su nombre y apellido">
                   </div>
 
                   <div class="mb-1">
@@ -107,9 +111,9 @@
                 </fieldset>
               </form>
         </div>
-        <article class="card col" id="resultado">
-
-        </article>
+        <div class="col-5" id="resultado">
+            
+        </div>
     </div>
 
     <footer style="height: 20vh; background-color: lightpink;">

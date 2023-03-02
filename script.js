@@ -53,13 +53,13 @@ function calcularCalorias() {
     resultado.innerHTML = ` 
         <div class=" d-flex flex-column justify-content-center align-items-center h-100" id="calculo" ">
              <div>
-                <p class="text-center"> El paciente ${nombre.value} identificado con ${tipoDocumento.value} No.${numeroDocumento.value}
-                requiere un total de ${Math.floor(calculoCalorias)} kal</p>
+                <p class="text-center" style="font-size: 1.5rem"> El paciente ${nombre.value} identificado con ${tipoDocumento.value} No.${numeroDocumento.value}
+                requiere un total de ${Math.floor(calculoCalorias)} kcal para el sostenimiento de su TBM</p>
              </div>
              <div>
                 <h5 class="card-title h2">Calorías requeridas</h5>
              </div>
-            <div class="mb-3 w-100">
+            <div class="mb-3">
                 <input class="form-control text-center" value="${Math.floor(calculoCalorias)} kcal" style="font-size: 2rem" disabled>
             </div>
         </div>
