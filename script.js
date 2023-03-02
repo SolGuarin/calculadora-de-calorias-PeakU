@@ -29,11 +29,15 @@ function calcularCalorias() {
 
     if ( edad.value == null || peso.value == null || altura.value == null ) {
         mostrarMensajeDeError('Por favor asegúrese de llenar todos los campos');
-        return;
+        return;  
     } else if (edad.value < 15 || edad.value > 80) {
         mostrarMensajeDeError('La edad ingresada no es permitida');
         return;
+    } else if(peso.value == 0){
+        mostrarMensajeDeError('Por favor ingrese un peso válido');
+        return; 
     }
+    
     
     let calculoCalorias;
     if (genero.id === 'hombre') {
