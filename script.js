@@ -8,6 +8,7 @@ formularioCalculadora.addEventListener('submit', (evento) => {
 })
 
 function calcularCalorias() {
+    //console.log('entreeeee');
     aparecerResultado();
 
     
@@ -26,16 +27,22 @@ function calcularCalorias() {
         altura: 6.25,
         edad: 5
     }
-
-    if ( edad.value == null || peso.value == null || altura.value == null ) {
+    //console.log(edad.value, Boolean(edad.value));
+    //console.log(peso.value, Boolean(peso.value));
+    //console.log(altura.value, Boolean(altura.value));
+    //console.log("se refrescoooooooo")
+    if(peso.value < 35){
+        mostrarMensajeDeError('Por favor ingrese un peso válido');
+        return; 
+    }else if ( !(Boolean(nombre.value) && Boolean(tipoDocumento.value) && Boolean(numeroDocumento.value) && Boolean (edad.value) && Boolean (peso.value) && Boolean (altura.value) && Boolean(actividad.value)) ) {
         mostrarMensajeDeError('Por favor asegúrese de llenar todos los campos');
         return;  
     } else if (edad.value < 15 || edad.value > 80) {
         mostrarMensajeDeError('La edad ingresada no es permitida');
         return;
-    } else if(peso.value == 0){
-        mostrarMensajeDeError('Por favor ingrese un peso válido');
-        return; 
+    } else if (altura.value < 100 || altura.value >250){
+        mostrarMensajeDeError('La altura ingresada no es permitida');
+        return;
     }
     
     
@@ -55,7 +62,7 @@ function calcularCalorias() {
     // totalCalorias.value = `${Math.floor(calculoCalorias)} kcal`;
     
     resultado.innerHTML = ` 
-        <div class=" d-flex flex-column justify-content-center align-items-center h-100" id="calculo" ">
+        <div class=" d-flex flex-column justify-content-center align-items-center h-100" id="calculo" >
              <div>
                 <p class="text-center" style="font-size: 1.5rem"> El paciente ${nombre.value} identificado con ${tipoDocumento.value} No.${numeroDocumento.value}
                 requiere un total de ${Math.floor(calculoCalorias)} kcal para el sostenimiento de su TBM</p>
@@ -66,8 +73,15 @@ function calcularCalorias() {
             <div class="mb-3">
                 <input class="form-control text-center" value="${Math.floor(calculoCalorias)} kcal" style="font-size: 2rem" disabled>
             </div>
+            <div>
+                <h7 class="card-title h2">Grupo poblacional</h7>
+             </div>
+            <div class="mb-3">
+            <p class="text-center" style="font-size: 1.5rem;"> ${grupoPoblacional(edad.value)}</p>
+            </div>
         </div>
     `
+    /*
     nombre.value = null;
     tipoDocumento.value = null,
     numeroDocumento.value = null;
@@ -75,8 +89,27 @@ function calcularCalorias() {
     altura.value = null;
     edad.value = null;
     actividad.value = null;
+    */
 }
 
+//grupo poblacional
+function grupoPoblacional(edad){
+    console.log('entreeee a poblacion')
+    console.log(edad);
+    var mensaje = '';
+    if (edad >= 15 && edad <= 29){
+        mensaje = "Según su edad, usted pertenece a la población joven"
+        return mensaje;
+    }else if(edad >= 30 && edad <= 59){
+        mensaje = "Según su edad, usted pertenece a la población adulta"
+        return mensaje;
+    }else if (edad >= 60){
+        mensaje = "Según su edad, usted pertenece a la población de adultos mayores"
+        return mensaje;
+    }
+
+}
+ //mensajes de error
 function mostrarMensajeDeError(msg) {
     const calculo = document.querySelector('#calculo');
     if (calculo) {
