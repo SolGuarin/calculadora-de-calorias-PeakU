@@ -8,7 +8,6 @@ formularioCalculadora.addEventListener('submit', (evento) => {
 })
 
 function calcularCalorias() {
-    //console.log('entreeeee');
     aparecerResultado();
 
     
@@ -27,11 +26,7 @@ function calcularCalorias() {
         altura: 6.25,
         edad: 5
     }
-    //console.log(edad.value, Boolean(edad.value));
-    //console.log(peso.value, Boolean(peso.value));
-    //console.log(altura.value, Boolean(altura.value));
-    //console.log("se refrescoooooooo")
-    if(peso.value < 35){
+    if(peso.value < 30){
         mostrarMensajeDeError('Por favor ingrese un peso válido');
         return; 
     }else if ( !(Boolean(nombre.value) && Boolean(tipoDocumento.value) && Boolean(numeroDocumento.value) && Boolean (edad.value) && Boolean (peso.value) && Boolean (altura.value) && Boolean(actividad.value)) ) {
@@ -64,24 +59,24 @@ function calcularCalorias() {
     resultado.innerHTML = ` 
         <div class=" d-flex flex-column justify-content-center align-items-center h-100" id="calculo" >
              <div>
-                <p class="text-center" style="font-size: 1.5rem"> El paciente ${nombre.value} identificado con ${tipoDocumento.value} No.${numeroDocumento.value}
-                requiere un total de ${Math.floor(calculoCalorias)} kcal para el sostenimiento de su TBM</p>
-             </div>
-             <div>
-                <h5 class="card-title h2">Calorías requeridas</h5>
+                <h5 class="card-title h2" style="color: #338b85; font-weight: bold;">Calorías requeridas</h5>
              </div>
             <div class="mb-3">
-                <input class="form-control text-center" value="${Math.floor(calculoCalorias)} kcal" style="font-size: 2rem" disabled>
+                <input class="form-control text-center" value="${Math.floor(calculoCalorias)} kcal" style="font-size: 2rem; width: 10rem; background-color: #c7f7f7; border: 0; border-radius: 0.5rem;" disabled>
             </div>
             <div>
-                <h7 class="card-title h2">Grupo poblacional</h7>
+                <p class="text-center" style="font-size: 1.5rem"> El paciente <span style="font-weight: bold;"> ${nombre.value} </span> identificado con <span style="font-weight: bold;">${tipoDocumento.value}  </span> No. ${numeroDocumento.value}, 
+                requiere un total de <span style="font-weight: bold;"> ${Math.floor(calculoCalorias)} kcal </span> para el sostenimiento de su Tasa Basal metabólica <span style="font-weight: bold;"> TBM </span> </p>
+            </div>
+            <div>
+                <h7 class="card-title h2" style="color: #338b85; font-weight: bold;">Grupo poblacional</h7>
              </div>
             <div class="mb-3">
             <p class="text-center" style="font-size: 1.5rem;"> ${grupoPoblacional(edad.value)}</p>
             </div>
         </div>
     `
-    /*
+
     nombre.value = null;
     tipoDocumento.value = null,
     numeroDocumento.value = null;
@@ -89,7 +84,7 @@ function calcularCalorias() {
     altura.value = null;
     edad.value = null;
     actividad.value = null;
-    */
+
 }
 
 //grupo poblacional

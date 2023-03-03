@@ -7,12 +7,13 @@
 ul{
     font-size: 2rem;
     font-weight: 900;  
+    
 }
 #formulario{
     background-image: url(./imagenes/citrus-fruit_nz6luj.webp);
 }
 input, select{
-    height: 2rem;
+    height: 2.3rem;
 }
 #button{
     width: 10rem;
