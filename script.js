@@ -65,8 +65,8 @@ function calcularCalorias() {
                 <input class="form-control text-center" value="${Math.floor(calculoCalorias)} kcal" style="font-size: 2rem; width: 10rem; background-color: #c7f7f7; border: 0; border-radius: 0.5rem;" disabled>
             </div>
             <div>
-                <p class="text-center" style="font-size: 1.5rem"> El paciente <span style="font-weight: bold;"> ${nombre.value} </span> identificado con <span style="font-weight: bold;">${tipoDocumento.value}  </span> No. ${numeroDocumento.value}, 
-                requiere un total de <span style="font-weight: bold;"> ${Math.floor(calculoCalorias)} kcal </span> para el sostenimiento de su Tasa Basal metabólica <span style="font-weight: bold;"> TBM </span> </p>
+                <p class="text-center" style="font-size: 1.5rem"> El/La paciente <span style="font-weight: bold;"> ${nombre.value} </span> identificado con <span style="font-weight: bold;">${tipoDocumento.value}  </span> No. ${numeroDocumento.value}, 
+                requiere un total de <span style="font-weight: bold;"> ${Math.floor(calculoCalorias)} kcal </span> para el sostenimiento de su Tasa Basal Metabólica <span style="font-weight: bold;"> TBM. </span> </p>
             </div>
             <div>
                 <h7 class="card-title h2" style="color: #338b85; font-weight: bold;">Grupo poblacional</h7>
@@ -89,17 +89,15 @@ function calcularCalorias() {
 
 //grupo poblacional
 function grupoPoblacional(edad){
-    console.log('entreeee a poblacion')
-    console.log(edad);
     var mensaje = '';
     if (edad >= 15 && edad <= 29){
-        mensaje = "Según su edad, usted pertenece a la población joven"
+        mensaje = "Según su edad, usted pertenece a la población joven."
         return mensaje;
     }else if(edad >= 30 && edad <= 59){
-        mensaje = "Según su edad, usted pertenece a la población adulta"
+        mensaje = "Según su edad, usted pertenece a la población adulta."
         return mensaje;
     }else if (edad >= 60){
-        mensaje = "Según su edad, usted pertenece a la población de adultos mayores"
+        mensaje = "Según su edad, usted pertenece a la población de adultos mayores."
         return mensaje;
     }
 
